@@ -10,7 +10,7 @@ https://packagist.org/packages/bhaveshpp/stage-bit
 
 ## Create a signup sheet
 
-Frontend:- Add a custom page with the URL "http://localhost/signup"Create a form
+Frontend:- Add a custom page with the URL "http://localhost/signup" Create a form
 with 2 inputs, name and date
 
 CRUD:- The module should have a collection, resource module, data module, and
