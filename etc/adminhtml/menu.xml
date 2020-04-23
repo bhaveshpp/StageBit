@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="bhaveshpp_stagebit::core" title="Stagebit" module="Bhaveshpp_Stagebit" sortOrder="100"  parent="Magento_Customer::customer" resource="Bhaveshpp_Stagebit::signup"/>
+        <add id="bhaveshpp_stagebit::test" title="List Signed up users" module="Bhaveshpp_Stagebit" sortOrder="10" parent="bhaveshpp_stagebit::core" action="bhaveshpp_stagebit/items/" resource="Bhaveshpp_Stagebit::items"/>
+    </menu>
+</config>

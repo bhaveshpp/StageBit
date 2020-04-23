@@ -1,0 +1,33 @@
+<?php
+
+namespace Bhaveshpp\Stagebit\Controller\Adminhtml\Items;
+
+class Delete extends \Bhaveshpp\Stagebit\Controller\Adminhtml\Items
+{
+
+    public function execute()
+    {
+        $id = $this->getRequest()->getParam('id');
+        if ($id) {
+            try {
+                $model = $this->_objectManager->create(\Bhaveshpp\Stagebit\Model\Stagebit::class);
+                $model->load($id);
+                $model->delete();
+                $this->messageManager->addSuccess(__('You deleted the item.'));
+                $this->_redirect('bhaveshpp_stagebit/*/');
+                return;
+            } catch (\Magento\Framework\Exception\LocalizedException $e) {
+                $this->messageManager->addError($e->getMessage());
+            } catch (\Exception $e) {
+                $this->messageManager->addError(
+                    __('We can\'t delete item right now. Please review the log and try again.')
+                );
+                $this->_objectManager->get(\Psr\Log\LoggerInterface::class)->critical($e);
+                $this->_redirect('bhaveshpp_stagebit/*/edit', ['id' => $this->getRequest()->getParam('id')]);
+                return;
+            }
+        }
+        $this->messageManager->addError(__('We can\'t find a item to delete.'));
+        $this->_redirect('bhaveshpp_stagebit/*/');
+    }
+}
