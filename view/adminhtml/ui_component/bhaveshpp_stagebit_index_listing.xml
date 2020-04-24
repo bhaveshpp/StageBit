@@ -51,7 +51,13 @@
                 </item>
             </argument>
         </component>
-        
+        <exportButton name="export_button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">bhaveshpp_stagebit_index_listing.bhaveshpp_stagebit_index_listing.bhaveshpp_stagebit_index_listing_columns.ids</item>
+                </item>
+            </argument>
+        </exportButton>
         <filterSearch name="fulltext">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
