@@ -21,7 +21,7 @@
         ],
         "psr-4": 
         {
-            "Bhaveshpp\\StageBit\\": ""
+            "Bhaveshpp\\Stagebit\\": ""
         }
     },
     "authors": [
